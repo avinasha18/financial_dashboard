@@ -105,7 +105,7 @@ export function SidebarContent({ onNavigate }: SidebarContentProps) {
         <div className="bg-muted rounded-xl p-4 flex items-center gap-3">
           <Avatar className="h-10 w-10 shrink-0">
             <AvatarFallback className="bg-primary text-primary-foreground font-semibold">
-              JD
+              TA
             </AvatarFallback>
           </Avatar>
           <div className="min-w-0 flex-1">
