@@ -20,7 +20,7 @@ export default function InsightsPage() {
       <Sidebar />
       <Navbar title="Insights" />
 
-      <main className="px-4 pt-20 pb-10 sm:px-6 md:pl-72 lg:pr-8 lg:pt-24 lg:pb-16">
+      <main className="px-4 pt-20 pb-10 sm:px-6 md:pl-[19rem] lg:pr-8 lg:pt-24 lg:pb-16">
         <div className="max-w-7xl mx-auto space-y-10">
           {/* Page Header */}
           <div className="space-y-2">

@@ -39,7 +39,7 @@ export function Navbar({ title }: NavbarProps) {
   }
 
   return (
-    <header className="fixed top-0 right-0 left-0 z-40 border-b border-border/50 bg-background/80 backdrop-blur-md md:left-72">
+    <header className="fixed top-0 right-0 left-0 z-40 border-b border-border/50 bg-background/80 backdrop-blur-md md:left-[19rem]">
       <div className="flex h-16 items-center justify-between gap-4 px-4 sm:px-6 lg:h-20 lg:px-8">
         {/* Page Title */}
         <div className="flex items-center gap-3">

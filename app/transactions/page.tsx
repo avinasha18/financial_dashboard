@@ -6,9 +6,12 @@ import { useTransactionInit } from '@/lib/hooks/use-transaction-init'
 import { Navbar } from '@/components/layout/navbar'
 import { Sidebar } from '@/components/layout/sidebar'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
 import { TransactionsTable } from '@/components/transactions/table'
 import { TransactionFilters } from '@/components/transactions/filters'
 import { AddTransactionModal } from '@/components/transactions/add-transaction-modal'
+import { exportTransactionsToCsv, exportTransactionsToJson } from '@/lib/export'
+import { Download } from 'lucide-react'
 
 export default function TransactionsPage() {
   useTransactionInit()
@@ -30,7 +33,7 @@ export default function TransactionsPage() {
       <Sidebar />
       <Navbar title="Transactions" />
 
-      <main className="px-4 pt-20 pb-10 sm:px-6 md:pl-72 lg:pr-8 lg:pt-24 lg:pb-16">
+      <main className="px-4 pt-20 pb-10 sm:px-6 md:pl-[19rem] lg:pr-8 lg:pt-24 lg:pb-16">
         <div className="max-w-7xl mx-auto space-y-8">
           <Card className="border border-border/50">
             <CardContent className="px-6 py-4">
@@ -54,7 +57,29 @@ export default function TransactionsPage() {
                 Manage and track all your income and expenses
               </p>
             </div>
-            {isEditable && <AddTransactionModal />}
+            <div className="flex flex-wrap items-center gap-2">
+              <Button
+                type="button"
+                variant="outline"
+                size="sm"
+                onClick={() => exportTransactionsToCsv(filteredTransactions)}
+                disabled={filteredTransactions.length === 0}
+              >
+                <Download className="h-4 w-4 mr-2" />
+                Export CSV
+              </Button>
+              <Button
+                type="button"
+                variant="outline"
+                size="sm"
+                onClick={() => exportTransactionsToJson(filteredTransactions)}
+                disabled={filteredTransactions.length === 0}
+              >
+                <Download className="h-4 w-4 mr-2" />
+                Export JSON
+              </Button>
+              {isEditable && <AddTransactionModal />}
+            </div>
           </div>
 
           {/* Filters Card */}
